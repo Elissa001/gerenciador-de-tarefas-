@@ -34,14 +34,14 @@ tarefas = []
 def adicionar_tarefa(titulo, prioridade="media"):
     tarefas.append({'titulo':titulo,'concluida':False,'prioridade':prioridade})
     print(f"Tarefa {titulo} adicionada")
-    """
+    
     # TODO (Aula 3): depois de implementar salvar_tarefas(), chame-a aqui 
     pass 
 
 def listar_tarefas():
     for index, itens in enumerate(tarefas, start=1):
         print(f"{index} - {itens['titulo]}")
-        
+
     """
     Exibe todas as tarefas cadastradas na lista `tarefas`.
 
