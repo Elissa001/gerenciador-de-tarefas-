@@ -41,66 +41,34 @@ def adicionar_tarefa(titulo, prioridade="media"):
 def listar_tarefas():
     for index, itens in enumerate(tarefas, start=1):
         print(f"{index} - {itens['titulo']}")
-        
-        pass
 
-    """
-    Exibe todas as tarefas cadastradas na lista `tarefas`.
-
-    Regras:
-        - Se a lista estiver vazia, exiba uma mensagem avisando que
-          não há tarefas cadastradas e pare a função (return).
-        - Caso contrário, para cada tarefa, exiba o número dela na lista
-          (começando em 1), se está concluída ou não, o título e a
-          prioridade. Dica: use enumerate(tarefas, start=1).
-
-    Sugestão de formato de saída para cada linha:
-        1. [ ] Estudar Python (prioridade: alta)
-        2. [X] Lavar a louça (prioridade: baixa)
-    """
-    # TODO (Aula 1): trate o caso de lista vazia
-    # TODO (Aula 1): percorra a lista de tarefas e exiba cada uma formatada
-    pass
-
-
+    
 # =====================================================================
 # ===== AULA 2 — Lógica e manipulação de tarefas =====
 # =====================================================================
 
 def concluir_tarefa(indice):
-    """
-    Marca como concluída a tarefa na posição `indice` (começando em 1).
-
-    Regras:
-        - Se `indice` for menor que 1 ou maior que o tamanho da lista,
-          exiba uma mensagem de erro ("Numero de tarefa invalido.") e
-          pare a função (return).
-        - Caso contrário, altere a chave "concluida" da tarefa para True
-          e exiba uma mensagem confirmando a conclusão.
-
-    Lembre-se: o índice exibido para o usuário começa em 1, mas listas em
-    Python começam em 0. Você vai precisar ajustar isso (indice - 1).
-    """
-    # TODO (Aula 2): valide o índice recebido
-    # TODO (Aula 2): marque a tarefa como concluída
-    # TODO (Aula 2): exiba uma mensagem de confirmação
+    if indice < 1 or indice > len(tarefas):
+        print("Numero de tarefas invalido")
+        return
+    else: 
+        for index, itens in enumerate(tarefas, start=1):
+            if index == indice: 
+                itens['concluida'] = True
+                print(f"Tarefa {itens['titulo']} concluida")
+   
     # TODO (Aula 3): depois de implementar salvar_tarefas(), chame-a aqui
     pass
 
 
 def remover_tarefa(indice):
-    """
-    Remove da lista a tarefa na posição `indice` (começando em 1).
-
-    Regras:
-        - Mesma validação de índice de concluir_tarefa().
-        - Use o método tarefas.pop(indice - 1) para remover e guardar
-          a tarefa removida ao mesmo tempo.
-        - Exiba uma mensagem confirmando qual tarefa foi removida.
-    """
-    # TODO (Aula 2): valide o índice recebido
-    # TODO (Aula 2): remova a tarefa da lista usando pop()
-    # TODO (Aula 2): exiba uma mensagem de confirmação
+    if indice < 1 or indice > len(tarefas): 
+        print("Número de tarefa inválido")
+    else: 
+        for index in enumerate(tarefas, start=1):
+            tarefas.pop(index - 1)
+            print("Tarefa removida")
+    
     # TODO (Aula 3): depois de implementar salvar_tarefas(), chame-a aqui
     pass
 
