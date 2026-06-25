@@ -40,7 +40,9 @@ def adicionar_tarefa(titulo, prioridade="media"):
 
 def listar_tarefas():
     for index, itens in enumerate(tarefas, start=1):
-        print(f"{index} - {itens['titulo]}")
+        print(f"{index} - {itens['titulo']}")
+        
+        pass
 
     """
     Exibe todas as tarefas cadastradas na lista `tarefas`.
